@@ -1,14 +1,87 @@
-import 'package:flutter/material.dart';
+
+
+
+
+
+
+//import 'package:flutter/material.dart';
+//
+//class AuthScreen extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    return Scaffold(
+//
+//      body: Stack(
+//    children: <Widget> [
+//      Container(
+//
+//    )
+//        ]
+//
+//
+//    ));
+//
+//  }
+//}
+
+import
+'package:flutter/material.dart';
+//import 'package:login_register_auth/ui/widgets/auth_form.dart';
+
+enum AuthType { login, register }
 
 class AuthScreen extends StatelessWidget {
+  final AuthType authType;
+
+  const AuthScreen({Key key, this.authType}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      body: Center(
-  child: Text("hello"),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Stack(
+              children: <Widget>[
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.5,
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50),
+                    ),
+                  ),
+                ),
+                Center(
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(height: 65),
+                      Text(
+                        'Hello!',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1.2),
+                      ),
+                      Hero(
+                        tag: 'logoAnimation',
+                        child: Image.asset(
+                          'assets/images/market.png',
+                          height: 250,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+         //   AuthForm(authType: authType),
+          ],
+        ),
       ),
     );
-
   }
 }

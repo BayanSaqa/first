@@ -22,7 +22,7 @@ import 'package:flutter/material.dart';
                        borderRadius: BorderRadius.circular(25),
                      ),
                      onPressed:() {
-                       Navigator.of(context).pushNamed('logIn');
+                       Navigator.of(context).pushNamed('login');
                      },
                    child: Text ('Get Started',
                      style: TextStyle(
